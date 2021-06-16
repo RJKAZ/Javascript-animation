@@ -1,3 +1,5 @@
+import {GlowParticle} from "./glowparticle.js";
+
 const COLORS = [
     {r: 45, g: 74, b: 227}, // blue
     {r: 250, g: 255, b: 89}, //yellow
@@ -42,7 +44,10 @@ class App {
         this.particles = [];
 
         for (let i = 0; i < this.totalParticles; i++ ){
-
+            const item = new GlowParticle(
+                Math.random() * this.stageWidth, 
+                Math.random() * this.stageheight,
+            );
         }
     }
     animate() {
@@ -54,4 +59,4 @@ window.onload = () => {
     new App();
 }
 
-// left off at 4:08 from video https://www.youtube.com/watch?v=D6EiRSRhsbQ
+// left off at 8:04 from video https://www.youtube.com/watch?v=D6EiRSRhsbQ
